@@ -1,0 +1,24 @@
+ {
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:import/recommended",
+        "plugin:unicorn/recommended"
+    ],
+    // rules: {
+    //     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
+    // },
+     "settings": {
+         "import/extensions": [
+             ".js",
+             ".jsx"
+         ]
+     },
+    "plugins": ["react"]
+}
