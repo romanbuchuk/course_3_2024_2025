@@ -18,7 +18,7 @@ const config = {
         /*https://www.npmjs.com/package/eslint-plugin-unicorn*/
         'plugin:unicorn/recommended',
         /*https://www.npmjs.com/package/eslint-plugin-cypress*/
-        /*'plugin:cypress/recommended',*/
+        'plugin:cypress/recommended',
     ],
     /* https://github.com/import-js/eslint-plugin-import */
     settings: {
@@ -48,6 +48,12 @@ const config = {
                 },
             },
         ],
+        'unicorn/no-empty-file': 'off',
+        'simple-import-sort/exports': 'error',
+        'simple-import-sort/imports': 'error',
+        'import/namespace': [2, { allowComputed: true }],
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
     },
     overrides: [
         {
@@ -62,6 +68,7 @@ const config = {
                         },
                     },
                 ],
+                'no-unused-vars': 'off'
             },
         },
     ],
