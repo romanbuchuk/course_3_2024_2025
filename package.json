@@ -34,6 +34,7 @@
     "@istanbuljs/nyc-config-babel": "^3.0.0",
     "babel-loader": "^9.2.1",
     "babel-plugin-istanbul": "^7.0.0",
+    "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
