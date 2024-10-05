@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "echo \"App has been started\" && exit 1",
-    "start:dev": "webpack serve -c config/webpack.dev.config.js",
-    "build": "webpack build -c config/webpack.prod.config.js",
-    "build:dev": "webpack build -c config/webpack.dev.config.js",
+    "start:dev": "webpack serve -c config/webpack.development.config.js",
+    "build": "webpack build -c config/webpack.production.config.js",
+    "build:dev": "webpack build -c config/webpack.development.config.js",
     "lint": "eslint ./src --max-warnings 0",
     "lint:fix": "eslint --fix src",
     "test": "echo \"Error: no test specified\" && exit 1"

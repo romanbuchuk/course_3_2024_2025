@@ -31,12 +31,40 @@ const config = {
             },
             webpack: {
                 // if not set, import won't work properly with aliases f.e. import Header from '@components/Header'
-                config: './config/webpack.dev.config.js',
+                config: './config/webpack.development.config.js',
             },
         },
     },
     plugins: ['simple-import-sort', 'react'],
     ignorePatterns: ['node_modules', '.eslintrc.js'],
+    rules: {
+        /*https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md*/
+        'unicorn/filename-case': [
+            'error',
+            {
+                cases: {
+                    camelCase: true,
+                    pascalCase: true,
+                },
+            },
+        ],
+    },
+    overrides: [
+        {
+            files: ['*rc.js', '*.config.js'],
+            rules: {
+                'unicorn/prefer-module': 'off',
+                'unicorn/filename-case': [
+                    'error',
+                    {
+                        cases: {
+                            kebabCase: true,
+                        },
+                    },
+                ],
+            },
+        },
+    ],
 };
 
 module.exports = config;
