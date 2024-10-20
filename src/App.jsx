@@ -1,4 +1,11 @@
+import Button from '@components/Button';
+import Header from '@components/Header';
+import Menu from '@components/Menu';
+import Tabs from '@components/Tabs';
+import List from '@components/List';
+import ListItem from '@components/ListItem';
 import React, { useState } from 'react';
+
 import styles from './App.css';
 
 const content = [
@@ -17,46 +24,54 @@ const content = [
 ];
 
 export default function App() {
-    const [activeContentIndex, setActiveContentIndex] = useState(0);
+    const [activeContentIndex, setActiveContentIndex] = useState();
+
+    // let activeContentIndex = 0;
+    //
+    // const setActiveContentIndex = (activeIndex) => {
+    //     activeContentIndex = activeIndex;
+    //
+    //     console.log('setActiveContentIndex', activeIndex);
+    //     console.log('activeContentIndex', activeContentIndex);
+    // }
+
+    // let listContent = <h3>Please select one of the tabs</h3>;
+    // if (activeContentIndex !== undefined) {
+    //     listContent = (
+    //         <Tabs id="tab-content">
+    //             <List>
+    //                 {content[activeContentIndex].map((item) => (
+    //                     <ListItem key={item}>{item}</ListItem>
+    //                 ))}
+    //             </List>
+    //         </Tabs>
+    //     );
+    // }
 
     return (
         <div className={styles.container}>
-            <header className={styles.header}>
-                <img src="react-logo-xs.png" alt="React logo" />
-                <div>
-                    <h1>React.js</h1>
-                    <p>i.e., using the React library for rendering the UI</p>
-                </div>
-            </header>
-
             <div id="tabs" className={styles.tabs}>
-                <menu>
-                    <button
-                        className={activeContentIndex === 0 && styles.active}
-                        onClick={() => setActiveContentIndex(0)}
-                    >
+                <Header title="React.js" subTitle="i.e., using the React library for rendering the UI" />
+                <Menu>
+                    <Button isActive={activeContentIndex === 0} onClick={() => setActiveContentIndex(0)}>
                         Why React?
-                    </button>
-                    <button
-                        className={activeContentIndex === 1 && styles.active}
-                        onClick={() => setActiveContentIndex(1)}
-                    >
+                    </Button>
+                    <Button isActive={activeContentIndex === 1} onClick={() => setActiveContentIndex(1)}>
                         Core Features
-                    </button>
-                    <button
-                        className={activeContentIndex === 2 && styles.active}
-                        onClick={() => setActiveContentIndex(2)}
-                    >
+                    </Button>
+                    <Button isActive={activeContentIndex === 2} onClick={() => setActiveContentIndex(2)}>
                         Related Resources
-                    </button>
-                </menu>
-                <div id="tab-content" className={styles['tab-content']}>
-                    <ul>
+                    </Button>
+                </Menu>
+                {/*{listContent}*/}
+                {activeContentIndex === undefined ? <h3>Please select one of the tabs</h3> : undefined }
+                {activeContentIndex === undefined ? undefined : <Tabs id="tab-content">
+                    <List>
                         {content[activeContentIndex].map((item) => (
-                            <li key={item}>{item}</li>
+                            <ListItem key={item}>{item}</ListItem>
                         ))}
-                    </ul>
-                </div>
+                    </List>
+                </Tabs>}
             </div>
         </div>
     );

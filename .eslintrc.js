@@ -22,9 +22,6 @@ const config = {
     ],
     /* https://github.com/import-js/eslint-plugin-import */
     settings: {
-        react: {
-            version: 'detect', // React version. "detect" automatically picks the version you have installed.
-        },
         'import/resolver': {
             node: {
                 extensions: ['.js', '.jsx'],

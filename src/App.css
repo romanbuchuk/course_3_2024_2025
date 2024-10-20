@@ -9,29 +9,6 @@
     margin: 2rem;
 }
 
-.header {
-    margin: 2rem 0;
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-
-    img {
-        width: 3rem;
-        object-fit: contain;
-    }
-
-    h1 {
-        margin: 0;
-        color: #48d9f3;
-    }
-
-    p {
-        margin: 0;
-        color: #82c2ce;
-    }
-}
-
-
 .tabs {
     max-width: 32rem;
     margin: 2rem 0;
@@ -61,16 +38,6 @@
                 color: #273133;
             }
         }
-    }
-}
-
-.tab-content {
-    background-color: #2d3942;
-    border-radius: 0 4px 4px 4px;
-    padding: 1rem;
-
-    li {
-        margin: 0.75rem 0;
     }
 }
 
