@@ -42,6 +42,7 @@ const config = {
         extensions: ['.js', '.jsx'],
         alias: {
             '@app': path.resolve(__dirname, '../src/'),
+            '@pages': path.resolve(__dirname, '../src/pages/'),
             '@components': path.resolve(__dirname, '../src/components/'),
         },
     },
